@@ -14,6 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.3;
 }
 
 body {
@@ -21,11 +22,11 @@ body {
     font-weight: 400;
     color: var(--fontColor);
     background-color: var(--backgroundColor);
-}
-
-main {
     width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 p {
@@ -33,23 +34,26 @@ p {
 }
 
 img {
-    width: 7.5vw;
-    height: 7.5vw;   
+    width: 2.5vw;
+    height: 2.5vw;   
     object-fit: contain;
     background-color: red;
     border-radius: 100%;
 }
 
 .container {
-    width: 80%;
     display: grid;
-    gap: 1.65rem;
-    align-items: center;
+    max-height: 100vh;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 20vw);
+    grid-template-areas: 
+        "t-1 t-1 t-2 t-5"
+        "t-3 t-4 t-4 t-5";
 }
 
 .grid {
     padding: 2rem;
-    border-radius: 0.5rem;
+    border-radius: 0.7rem;
 }
 
 .user-info {
@@ -76,12 +80,19 @@ img {
     margin: 1rem 0;
 }
 
+.testimonial {
+    line-height: 1.5;
+}
+
 .testimonial-1 {
     background-color: var(--primaryColor);
+    grid-area: t-1;
 }
 
 .testimonial-2 {
     background-color: var(--neutralColor);
+    grid-area: t-2;
+
 }
 
 .testimonial-3, .testimonial-5 {
@@ -91,4 +102,13 @@ img {
 
 .testimonial-4 {
     background-color: var(--secondNeutral);
+    grid-area: t-4;
+}
+
+.testimonial-3 {
+    grid-area: t-3;
+}
+
+.testimonial-5 {
+    grid-area: t-5;
 }
